@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8'?> 
+<!DOCTYPE hibernate-mapping PUBLIC  
+ "-//Hibernate/Hibernate Mapping DTD 5.3//EN"  
+ "http://hibernate.sourceforge.net/hibernate-mapping-5.3.dtd">
+
+ <hibernate-mapping>
+ 	<class name="com.servlet.dto.TypedUser" table="typed_user">
+ 	
+ 		<id name="reservationNumber" type="int">
+ 		
+ 			<column name="reservationNumber"></column>
+ 			<generator class="native"></generator>
+ 		</id>
+ 		<!-- <property name="status" type="ReservationStatus">
+ 			<column name="resv_status"></column>
+ 		</property>  -->
+ 		<property name="passenger" type="com.servlet.dto.PassengerType">
+ 			<column name="passengerId"></column>
+ 			<column name="passengerName"></column>
+ 			<column name="passportNumber"></column>
+ 			<column name="dob"></column>
+ 		</property>
+ 	</class>
+ </hibernate-mapping>

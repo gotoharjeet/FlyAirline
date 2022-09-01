@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8'?> 
+<!DOCTYPE hibernate-mapping PUBLIC  
+ "-//Hibernate/Hibernate Mapping DTD 5.3//EN"  
+ "http://hibernate.sourceforge.net/hibernate-mapping-5.3.dtd">
+
+ <hibernate-mapping>
+ 	<class name="com.servlet.dto.Dep_Airport" table="dep_aport1">
+ 		<id name="unique_code" column="dep_aport_id">
+			<generator class="increment"></generator>
+ 		</id>		
+ 		<property name="name" column="airport_name"></property>
+ 		<property name="address" column="airport_address"></property>
+ 	</class>
+  </hibernate-mapping>

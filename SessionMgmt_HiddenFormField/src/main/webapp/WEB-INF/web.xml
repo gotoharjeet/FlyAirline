@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+  <display-name>SessionMgmt_HiddenFormField</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  <servlet>
+    <description></description>
+    <display-name>MYFirstServlet</display-name>
+    <servlet-name>MYFirstServlet</servlet-name>
+    <servlet-class>com.servlet.MYFirstServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>MYFirstServlet</servlet-name>
+    <url-pattern>/MYFirstServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>MyFirstHiddenServlet</display-name>
+    <servlet-name>MyFirstHiddenServlet</servlet-name>
+    <servlet-class>com.servlet.MyFirstHiddenServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>MyFirstHiddenServlet</servlet-name>
+    <url-pattern>/MyFirstHiddenServlet</url-pattern>
+  </servlet-mapping>
+</web-app>

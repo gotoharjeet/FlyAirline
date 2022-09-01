@@ -1,0 +1,35 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ page import="java.sql.*" %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Populate Source Airport List</title>
+</head>
+<body>
+
+   <form action="AddFlightServlet" method="post">
+   
+  Enter Flight Number<input type="text" name="flightNumber"><br/>
+  Enter Date of Flight<input type="datetime" name="dto_flight"><br/>
+   <label>Source Airport</label>
+   	
+    <br/>
+    
+    <label>Destination Airport</label>
+    
+   	<br/>
+   	
+   	<label>Airline </label>
+    
+   	<br/>
+   
+   Ticket Price<input type="text" name="ticketPrice"><br/>
+    Number of seats<input type="text" name="noofSeats"><br/>
+   	<input type="submit" value="Add">
+  
+   </form>
+	
+</body>
+</html>

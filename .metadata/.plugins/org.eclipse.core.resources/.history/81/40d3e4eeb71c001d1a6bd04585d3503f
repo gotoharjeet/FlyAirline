@@ -1,0 +1,83 @@
+package com.servlet.dao;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+
+import com.servlet.dto.Airline;
+import com.servlet.dto.Departure_Airport;
+import com.servlet.dto.Place_Airport;
+import com.servlet.util.SessionFactoryManagerImpl;
+
+
+public class PlaceDaoImpl implements PlaceDao {
+
+	private SessionFactory factory;
+	
+	public PlaceDaoImpl() 
+	{
+		factory = new SessionFactoryManagerImpl().getSessionFactory();
+	}
+	
+	
+	@Override
+	public int addPlace(Place_Airport place_airport,Departure_Airport departure_airport) {
+		int airportCode=0;
+		Session session = factory.openSession();
+		Transaction transaction = session.beginTransaction();
+		session.save(place_airport);
+		System.out.println("AirportCode DaoImpl "+airportCode);
+		session.save(departure_airport);
+		
+		transaction.commit();
+		session.close();
+		return (int)airportCode;
+	}
+
+	@Override
+	public void updatePlace(Place_Airport place_airport,Departure_Airport departure_airport) {
+		Session session=factory.openSession();
+		Transaction transaction=session.beginTransaction();
+		//System.out.println(place_airport.getAirportCode());
+		
+		
+		session.update(place_airport);
+		session.update(departure_airport);
+		
+		transaction.commit();
+		session.close();
+		
+	}
+
+
+	@Override
+	public void deletePlace(String airportCode,String airportCode1) {
+		
+		Session session = factory.openSession();
+		Transaction transaction = session.beginTransaction();
+		
+		Place_Airport place_airport=session.get(Place_Airport.class, airportCode);
+		Departure_Airport departure_airport=session.get(Departure_Airport.class, airportCode1);
+		session.delete(place_airport);
+		session.delete(departure_airport);
+		
+		transaction.commit();
+		session.close();
+	}
+
+
+	
+
+
+	@Override
+	public Place_Airport searchPlace(String airportCode,String airportCode1) {
+		// Session session=factory.openSession();
+		//Airline airline=session.get(Airline.class, airlineCode);
+		//return airline;
+		Session session=factory.openSession();
+		Place_Airport place_airport=session.get(Place_Airport.class, airportCode);
+		Departure_Airport departure_airport=session.get(Departure_Airport.class, airportCode);
+		return place_airport;
+	}
+
+}

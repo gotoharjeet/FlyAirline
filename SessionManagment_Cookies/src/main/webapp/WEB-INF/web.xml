@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+  <display-name>SessionManagment_Cookies</display-name>
+  <welcome-file-list>
+    <welcome-file>Cookies.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  <servlet>
+    <description></description>
+    <display-name>CookiesServlet1</display-name>
+    <servlet-name>CookiesServlet1</servlet-name>
+    <servlet-class>com.servlet.CookiesServlet1</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CookiesServlet1</servlet-name>
+    <url-pattern>/CookiesServlet1</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>CookieServlet2</display-name>
+    <servlet-name>CookieServlet2</servlet-name>
+    <servlet-class>com.servlet.CookieServlet2</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CookieServlet2</servlet-name>
+    <url-pattern>/CookieServlet2</url-pattern>
+  </servlet-mapping>
+</web-app>

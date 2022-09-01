@@ -1,0 +1,5 @@
+127.0.0.1 - - [22/Aug/2022:15:54:25 +0530] "GET / HTTP/1.1" 404 751
+0:0:0:0:0:0:0:1 - - [22/Aug/2022:15:54:26 +0530] "GET /FlyAirline/home.html HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [22/Aug/2022:15:54:47 +0530] "GET /FlyAirline/place.html HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [22/Aug/2022:15:54:54 +0530] "GET /FlyAirline/updateplace.html HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [22/Aug/2022:15:56:34 +0530] "POST /FlyAirline/UpdatePlaceServlet HTTP/1.1" 500 1575

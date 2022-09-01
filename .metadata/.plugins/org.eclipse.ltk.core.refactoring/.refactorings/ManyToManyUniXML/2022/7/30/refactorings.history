@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy 3 elements to &apos;ManyToManyXML/src/com.beans&apos;&#x0A;- Original project: &apos;ManyToManyUniXML&apos;&#x0A;- Destination element: &apos;ManyToManyXML/src/com.beans&apos;&#x0A;- Original elements:&#x0A;     beans.Book.java&#x0A;     beans.Author.java&#x0A;     book.hbm.xml" description="Copy elements" destination="=ManyToManyXML/src&lt;com.beans" element1="src/beans/book.hbm.xml" element2="/src&lt;beans{Book.java" element3="/src&lt;beans{Author.java" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1658198732856" units="2" version="1.0"/>
+</session>

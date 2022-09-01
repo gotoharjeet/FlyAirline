@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8'?>    
+<!DOCTYPE hibernate-mapping PUBLIC    
+          "-//Hibernate/Hibernate Mapping DTD 5.3//EN"    
+          "http://hibernate.sourceforge.net/hibernate-mapping-5.3.dtd">
+
+<hibernate-mapping>
+	<class name="com.beans.Branch" table="branch">
+		<id name="branchId" column="branch_id">
+			<generator class="increment"></generator>
+		</id>
+		<property name="branchName" column="branch_name"></property> 
+		<property name="shortName" column="short_name"></property>
+		<property name="description" column="description"></property>
+		
+		<set name="subjects" table="branch_subject" 
+			inverse="true" lazy="true" fetch="select">
+			<key column="branch_id"/>
+			<many-to-many class="com.beans.Subject" column="subject_id"/>
+		</set>
+		
+	</class>	
+	
+	
+</hibernate-mapping>         

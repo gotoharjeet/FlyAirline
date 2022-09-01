@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC  
+          "-//Hibernate/Hibernate Mapping DTD 5.3//EN"  
+          "http://hibernate.sourceforge.net/hibernate-mapping-5.3.dtd">
+
+<hibernate-mapping>
+	<class name="com.servlet.dto.Flight" table="flight_1">
+		<id name="flightNumber">
+			<generator class="assigned"></generator>
+		</id>
+		<property name="dto_flight" column="datetime_flight" type="date"></property>
+		<property name="source_airport" column="source_airport"></property>
+		<property name="dest_airport" column="dest_airport"></property>
+		<property name="airline" column="airline"></property>
+		<property name="ticketPrice" column="ticketPrice"></property>
+		<property name="noofSeats" column="no_seats"></property>
+	</class>
+	
+	
+</hibernate-mapping> 

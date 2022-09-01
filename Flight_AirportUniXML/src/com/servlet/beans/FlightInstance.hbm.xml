@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC    
+          "-//Hibernate/Hibernate Mapping DTD 5.3//EN"    
+          "http://hibernate.sourceforge.net/hibernate-mapping-5.3.dtd">
+          
+<hibernate-mapping>
+	<class name="com.servlet.dto.FlightInstance" table="flight_instance">
+		<id name="finstanceId" column="flightInstance_id">
+			<generator class="increment"></generator>
+		</id>
+		<property name="departureTime" column="departureTime"></property>
+		<property name="gate" column="gate"></property>
+	<!-- 	<property name="fstatus" column="fstatus"></property>  -->
+	</class>
+</hibernate-mapping>

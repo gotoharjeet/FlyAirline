@@ -1,0 +1,44 @@
+package com.servlet.service;
+
+import com.servlet.dao.PlaceDao;
+import com.servlet.dao.PlaceDaoImpl;
+import com.servlet.dto.Departure_Airport;
+import com.servlet.dto.Place_Airport;
+
+public class PlaceServiceImpl implements PlaceService{
+
+	private PlaceDao dao;
+	
+	
+	public PlaceServiceImpl()
+	{
+		dao=new PlaceDaoImpl();
+	}
+	
+	
+	@Override
+	public int addPlace(Place_Airport place_airport,Departure_Airport departure_airport) {
+		return dao.addPlace(place_airport);
+	}
+
+
+	@Override
+	public Place_Airport searchPlace(String airportCode) {
+		
+		return dao.searchPlace(airportCode);
+	}
+
+
+	@Override
+	public void updatePlace(Place_Airport place_airport, Departure_Airport departurea_airport) 
+	{	
+		dao.updatePlace(place_airport);
+	}
+
+
+	public void deletePlace(String airportCode) {
+		dao.deletePlace(airportCode);
+		
+	}
+
+}

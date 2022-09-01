@@ -1,0 +1,26 @@
+package com.servlet.service;
+
+import com.servlet.dao.FlightDao;
+import com.servlet.dao.FlightDaoImpl;
+import com.servlet.dto.Airline;
+import com.servlet.dto.Flight;
+
+public class FlightServiceImpl implements FlightService {
+
+	private FlightDao dao;
+	
+	public FlightServiceImpl() {
+		dao=new FlightDaoImpl();
+	}
+	@Override
+	public int addFlight(Flight flight) {
+		// TODO Auto-generated method stub
+		return dao.addFlight(flight);
+	}
+	@Override
+	public Airline searchFlight(String flightNumber) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

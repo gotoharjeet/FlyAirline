@@ -1,0 +1,97 @@
+package com.servlet.dto;
+
+//import org.joda.*;
+
+//import org.joda.time.DateTime;
+import java.util.Date;
+public class Flight {
+	
+	private String flightNumber;
+	private Date dto_flight;
+	private String source_airport;
+	private String dest_airport;
+	private String airline;
+	private float ticketPrice;
+	private int noofSeats;
+	
+	public Flight() {}
+	
+	public Flight(Date dto_flight,String source_airport,String dest_airport,int noofSeats)
+	{
+		this.dto_flight=dto_flight;
+		this.source_airport=source_airport;
+		this.dest_airport=dest_airport;
+		this.noofSeats=noofSeats;
+	}
+	
+	
+	public String getFlightNumber() {
+		return flightNumber;
+	}
+
+
+
+	public void setFlightNumber(String flightNumber) {
+		this.flightNumber = flightNumber;
+	}
+
+	public String getSource_airport() {
+		return source_airport;
+	}
+	public void setSource_airport(String source_airport) {
+		this.source_airport = source_airport;
+	}
+	public String getDest_airport() {
+		return dest_airport;
+	}
+	public void setDest_airport(String dest_airport) {
+		this.dest_airport = dest_airport;
+	}
+	public String getAirline() {
+		return airline;
+	}
+	public void setAirline(String airline) {
+		this.airline = airline;
+	}
+	public float getTicketPrice() {
+		return ticketPrice;
+	}
+	public void setTicketPrice(float ticketPrice) {
+		this.ticketPrice = ticketPrice;
+	}
+
+
+	public Date getDto_flight() {
+		return dto_flight;
+	}
+
+
+
+	public void setDto_flight(Date dto_flight) {
+		this.dto_flight = dto_flight;
+	}
+
+
+
+	public int getNoofSeats() {
+		return noofSeats;
+	}
+
+
+
+	public void setNoofSeats(int noofSeats) {
+		this.noofSeats = noofSeats;
+	}
+
+
+
+
+	
+
+
+
+	
+	
+	
+
+}

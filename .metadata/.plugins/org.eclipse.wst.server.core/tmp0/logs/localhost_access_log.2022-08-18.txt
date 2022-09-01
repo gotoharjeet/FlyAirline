@@ -1,0 +1,6 @@
+127.0.0.1 - - [18/Aug/2022:21:14:43 +0530] "GET / HTTP/1.1" 404 751
+0:0:0:0:0:0:0:1 - - [18/Aug/2022:21:14:45 +0530] "GET /FlyAirline/searchFlight.jsp HTTP/1.1" 200 3848
+0:0:0:0:0:0:0:1 - - [18/Aug/2022:21:15:06 +0530] "POST /FlyAirline/SearchFlightServlet HTTP/1.1" 500 3441
+127.0.0.1 - - [18/Aug/2022:21:16:35 +0530] "GET / HTTP/1.1" 404 751
+0:0:0:0:0:0:0:1 - - [18/Aug/2022:21:16:37 +0530] "GET /FlyAirline/searchFlight.jsp HTTP/1.1" 200 3848
+0:0:0:0:0:0:0:1 - - [18/Aug/2022:21:17:15 +0530] "POST /FlyAirline/SearchFlightServlet HTTP/1.1" 500 5778

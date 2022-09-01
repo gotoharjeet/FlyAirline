@@ -1,0 +1,18 @@
+package com.servlet.dao;
+
+
+
+
+import com.servlet.dto.Departure_Airport;
+import com.servlet.dto.Place_Airport;
+
+
+
+public interface PlaceDao {
+	public int addPlace(Place_Airport place_airport,Departure_Airport departure_airport);
+	public void updatePlace(Place_Airport place_airport, Departure_Airport departure_airport);
+	public void deletePlace(String airportCode);
+	public Place_Airport searchPlace(String airportCode);
+	//public List<Place_Airport> getAllPlaces();
+	
+}

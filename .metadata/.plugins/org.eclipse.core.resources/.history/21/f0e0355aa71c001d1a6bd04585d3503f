@@ -1,0 +1,68 @@
+package com.servlet.controller;
+
+import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.servlet.dto.Arrival_Airport;
+import com.servlet.dto.Departure_Airport;
+import com.servlet.dto.Place_Airport;
+import com.servlet.service.PlaceServiceImpl;
+
+
+
+public class AddPlaceServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+  
+    public AddPlaceServlet() {
+        super();
+      
+    }
+
+	
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	
+		//response.getWriter().append("Served at: ").append(request.getContextPath());
+		RequestDispatcher dispatcher=null;
+		String airportCode=request.getParameter("airportCode");
+		String airportName=request.getParameter("airportName");
+		String airportAddress=request.getParameter("airportAdd");
+		System.out.println(airportCode);
+		System.out.println(airportName);
+		System.out.println(airportAddress);
+		Place_Airport place_airport=new Place_Airport(airportCode,airportName,airportAddress);
+		Arrival_Airport arrival_airport=new Arrival_Airport(airportCode,airportName,airportAddress);
+		Departure_Airport departure_airport=new Departure_Airport(airportCode,airportName,airportAddress);
+		
+		int row=new PlaceServiceImpl().addPlace(place_airport,departure_airport);
+		System.out.println("row in addsev "+row);
+		String msg = null;
+		if(row > 0 )
+		{
+			msg = "Place of Airport Added Successfully";
+			request.setAttribute("msg", msg);
+			dispatcher = request.getRequestDispatcher("home.html");
+			dispatcher.forward(request, response);
+		}
+		else
+		{
+			msg = "Some error while adding place of airport";
+			request.setAttribute("msg", msg);
+			dispatcher = request.getRequestDispatcher("home.html");
+			dispatcher.forward(request, response);
+		}
+		
+	}
+
+	
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		doGet(request, response);
+	}
+
+}

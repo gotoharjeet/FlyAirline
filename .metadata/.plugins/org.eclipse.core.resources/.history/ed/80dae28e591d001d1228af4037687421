@@ -1,0 +1,90 @@
+package com.servlet.controller;
+
+import java.io.IOException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.servlet.dto.Flight;
+import com.servlet.service.FlightServiceImpl;
+
+
+public class AddFlightServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    
+    public AddFlightServlet() {
+        super();
+     
+    }
+
+	
+	
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	
+		//response.getWriter().append("Served at: ").append(request.getContextPath());
+		 //Date datetime = DateTimeFormat.forPattern("yyyy-MM-dd HH:mm:ss")
+	               // .parseDateTime(request.getParameter("dto_flight"));
+		
+	
+		
+		RequestDispatcher dispatcher=null;
+		Flight flight=new Flight();
+		flight.setFlightNumber(request.getParameter("flightNumber"));
+		String dt=request.getParameter("dto_flight");
+		Date date1=null;
+		try {
+			date1 = new SimpleDateFormat("dd/MM/yyyy").parse(dt);
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		flight.setDto_flight(date1);
+		flight.setSource_airport(request.getParameter("dep_airportCode"));
+		flight.setDest_airport(request.getParameter("arr_airportCode"));
+		flight.setAirline(request.getParameter("airlineId"));
+		flight.setTicketPrice(Float.parseFloat(request.getParameter("ticketPrice")));
+		flight.setNoofSeats(Integer.parseInt(request.getParameter("noofSeats")));
+		System.out.println(flight.getFlightNumber());
+		System.out.println(flight.getDto_flight());
+		System.out.println(flight.getSource_airport());
+		System.out.println(flight.getDest_airport());
+		System.out.println(flight.getAirline());
+		System.out.println(flight.getTicketPrice());
+		System.out.println(flight.getNoofSeats());
+		
+		int row=new FlightServiceImpl().addFlight(flight);
+		System.out.println("row in addsev"+row);
+		String msg=null;
+		if(row > 0)
+		{
+			msg="Airline Added Successfully";
+			request.setAttribute(msg, msg);
+			dispatcher=request.getRequestDispatcher("home.html");
+			dispatcher.forward(request, response);
+		}
+		else
+		{
+			msg="Some error while adding flight";
+			request.setAttribute(msg, msg);
+			dispatcher = request.getRequestDispatcher("home.html");
+			dispatcher.forward(request, response);
+		}
+		
+	}
+
+	
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	
+		doGet(request, response);
+	}
+
+}

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC    
+          "-//Hibernate/Hibernate Mapping DTD 5.3//EN"    
+          "http://hibernate.sourceforge.net/hibernate-mapping-5.3.dtd">
+
+<hibernate-mapping>
+	<class name="com.servlet.dto.Flight" table="flight_dta1">
+		<id name="flightNumber" column="flightNumber">
+			<generator class="increment"></generator>
+		</id>
+		<property name="durationInMinutes" column="durationInMinutes"></property>
+		<many-to-one name="departure" column="dep_ucode"
+			cascade="all"></many-to-one>
+		<many-to-one name="arrival" column="arr_ucode"
+			cascade="all"></many-to-one>
+		<list name="flightInstance" cascade="all">
+			 <key column="flightNumber"></key> 
+				<list-index column="type"></list-index> 
+			<one-to-many class="com.servlet.dto.FlightInstance" />
+		</list>
+		
+	</class>
+	
+	 <class name="com.servlet.dto.FlightInstance" table="flight_Instance">  
+          <id name="finstanceId" column="flightInstance_id">  
+          <generator class="increment"></generator>  
+          </id>  
+          <property name="departureTime" column="dep_time"></property>  
+          <property name="gate" column="gate"></property> 
+          <property name="fstatus" column="flight_status"></property>
+          <one-to-one name="aircraft" class="com.servlet.dto.Aircraft"
+				cascade="save-update"> </one-to-one>
+      </class>  
+      
+	  <class name="com.servlet.dto.Aircraft" table="aircraft">
+		  <id name="aircraftId" column="aircraft_Id">
+		  	<generator class="increment"></generator>
+		  </id>
+		  <one-to-one name="flightInstance" class="com.servlet.dto.FlightInstance"
+			constrained="true"></one-to-one>
+			
+		  <list name="seats" cascade="all">
+			 <key column="aircraftId"></key> 
+				<list-index column="type"></list-index> 
+			<one-to-many class="com.servlet.dto.Seat" />
+		</list>
+		  <property name="aircraftName" column="aircraft_Name"></property>
+		  <property name="aircraftModel" column="aircraft_Modal"></property>
+		  <property name="manufactYear" column="manufact_Year"></property>
+		  
+	  </class>
+	  
+	  <class name="com.servlet.dto.Seat" table="seat">
+	  	<id name="seatNumber" column="seat_number">
+	  		<generator class="increment"></generator>
+		</id>
+	  	  <property name="seatType" column="seat_type"></property>
+	  	  <property name="seatClass" column="seat_Class"></property>
+	  </class>
+	  
+	  <class name="com.servlet.dto.FlightReservation" table="flight_resv">
+	  	<id name="reservationNumber">
+	  		<generator class="increament"></generator>
+	  	</id>
+	  	  <one-to-one name="flight" class="com.servlet.dto.FlightInstance"
+			cascade="save-update">
+		  </one-to-one>
+		
+		<map name="seatMap" table="seatMap" cascade="all">
+		  <key column="reservationNumber"></key>
+		     <index column="passanger" type="com.servlet.dto.PassangerType"></index> 
+		     <element column="flightseat" type="com.servlet.dto.FlightSeatType"></element>	
+		</map>
+	  </class>
+	  
+	  
+	  
+</hibernate-mapping>

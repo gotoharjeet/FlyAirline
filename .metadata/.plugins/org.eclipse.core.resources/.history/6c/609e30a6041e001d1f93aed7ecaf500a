@@ -1,0 +1,17 @@
+package com.servlet.dao;
+
+import java.util.List;
+
+import com.servlet.dto.Airline;
+import com.servlet.dto.Flight;
+
+public interface FlightDao {
+	
+	public int addFlight(Flight flight);
+	//public void updateFlight(Flight flight);
+	//public void deleteFlight(String flightNumber);
+	//public Airline searchFlight(String flightNumber);
+	public List<Flight> displayFlights(Flight flight);
+	//public List<Airline> getAllAirline();
+
+}

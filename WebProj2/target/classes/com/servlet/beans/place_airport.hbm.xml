@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8'?>  
+<!DOCTYPE hibernate-mapping PUBLIC  
+          "-//Hibernate/Hibernate Mapping DTD 5.3//EN"  
+          "http://hibernate.sourceforge.net/hibernate-mapping-5.3.dtd">
+
+<hibernate-mapping>
+	<class name="com.servlet.beans.Place_Airport" table="place_airport">
+		<id name="airportCode">
+			<generator class="increment"></generator>
+		</id>
+		<property name="airportName" column="airport_name"></property>
+		<property name="airportAdd"  column="airport_address"></property>
+	</class>
+</hibernate-mapping>  

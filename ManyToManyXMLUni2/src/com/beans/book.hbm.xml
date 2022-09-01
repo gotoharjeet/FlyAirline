@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8'?>    
+<!DOCTYPE hibernate-mapping PUBLIC    
+          "-//Hibernate/Hibernate Mapping DTD 5.3//EN"    
+          "http://hibernate.sourceforge.net/hibernate-mapping-5.3.dtd">
+
+<hibernate-mapping>
+	<class name="com.beans.Book" table="book_1">
+		<id name="bookId" column="book_id">
+			<generator class="increment"></generator>
+		</id>
+		<property name="bookName" column="book_name"></property>
+		<set name="authors" table="book_author" cascade="all">
+			<key column="book_id"/>
+			<many-to-many class="com.beans.Author" 
+			column="author_id"/>
+		</set>
+		
+	</class>	
+	<class name="com.beans.Author" table="author_1">
+		<id name="authorId" column="author_id">
+			<generator class="increment"></generator>
+		</id>
+		<property name="authorName" column="author_name"></property>
+	</class>
+</hibernate-mapping>         

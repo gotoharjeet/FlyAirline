@@ -1,0 +1,67 @@
+package com.servlet.controller;
+
+import java.io.IOException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.servlet.dao.FlightDaoImpl;
+import com.servlet.dto.Flight;
+import java.util.List;
+
+public class SearchFlightServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+   
+    public SearchFlightServlet() {
+        super();
+     
+    }
+
+	
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	
+		response.getWriter().append("Served at: ").append(request.getContextPath());
+		
+		String source_airport=request.getParameter("dep_airportCode");
+		String dest_airport=request.getParameter("arr_airportCode");
+		String date_of_travel=request.getParameter("dot");
+		
+		Date date1=null;
+		try {
+			date1 = new SimpleDateFormat("dd/MM/yyyy").parse(date_of_travel);
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		int total_seats=Integer.parseInt(request.getParameter("total_seats"));
+		
+		Flight searching_flights=new Flight(source_airport,dest_airport,date1,total_seats);
+		List<Flight> found_flights=new FlightDaoImpl().displayFlights(searching_flights);
+		if(found_flights != null)
+		{
+			System.out.println("printing the list of flight");
+		}
+		else
+		{
+			System.out.println("sorry list not found in DB");
+		}
+		
+		
+		
+		
+	}
+
+	
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	
+		doGet(request, response);
+	}
+
+}

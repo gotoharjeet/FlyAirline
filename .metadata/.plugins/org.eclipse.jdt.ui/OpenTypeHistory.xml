@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<typeInfoHistroy>
+    <typeInfo handle="=ShoppingBuzz/src\/main\/java&lt;com.servlet.dao{UserDao.java[UserDao" modifiers="513" timestamp="1658049426000"/>
+    <typeInfo handle="=ShoppingBuzz/src\/main\/java&lt;com.servlet.util{ConnectionManager.java[ConnectionManager" modifiers="513" timestamp="1658051292000"/>
+    <typeInfo handle="=Flight_AirportUniXML/src&lt;com.servlet.dto{Seat.java[Seat" modifiers="1" timestamp="1659093655000"/>
+    <typeInfo handle="=Flight_AirportUniXML/\/Users\/jaspal\/Downloads\/jar_files\/hibernate-core-5.3.27.Final.jar&lt;org.hibernate.usertype(UserType.class[UserType" modifiers="1537" timestamp="1655333126000"/>
+    <typeInfo handle="=WebProj2/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.servlet.dao{PlaceDao.java[PlaceDao" modifiers="513" timestamp="1659459838000"/>
+    <typeInfo handle="=WebProj2/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.servlet.service{AirlineService.java[AirlineService" modifiers="513" timestamp="1659524087000"/>
+    <typeInfo handle="=WebProj2/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.servlet.dao{AirlineDao.java[AirlineDao" modifiers="513" timestamp="1659524125000"/>
+    <typeInfo handle="=WebProj2/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.servlet.service{SearchPlaceService.java[SearchPlaceService" modifiers="513" timestamp="1659529356000"/>
+    <typeInfo handle="=WebProj2/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.servlet.dao{SearchPlaceDao.java[SearchPlaceDao" modifiers="513" timestamp="1659529480000"/>
+    <typeInfo handle="=WebProj2/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.servlet.util{SessionFactoryManager.java[SessionFactoryManager" modifiers="513" timestamp="1659611012000"/>
+    <typeInfo handle="=FlyAirline/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.servlet.dao{AirlineDao.java[AirlineDao" modifiers="513" timestamp="1660050297000"/>
+    <typeInfo handle="=FlyAirline/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.servlet.service{FlightService.java[FlightService" modifiers="513" timestamp="1660724102000"/>
+    <typeInfo handle="=FlyAirline/\/Volumes\/Eclipse\/Eclipse.app\/Contents\/Eclipse\/plugins\/org.eclipse.justj.openjdk.hotspot.jre.full.macosx.x86_64_16.0.1.v20210528-1205\/jre\/lib\/jrt-fs.jar`jdk.jfr=/maven.pomderived=/true=/=/javadoc_location=/https:\/\/docs.oracle.com\/en\/java\/javase\/16\/docs\/api\/=/&lt;jdk.jfr(FlightRecorderListener.class[FlightRecorderListener" modifiers="1537" timestamp="1622203974000"/>
+</typeInfoHistroy>

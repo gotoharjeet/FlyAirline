@@ -1,0 +1,84 @@
+package com.servlet.dao;
+
+import java.util.List;
+
+
+
+import javax.persistence.Query;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+
+
+import com.servlet.dto.Flight;
+import com.servlet.util.SessionFactoryManagerImpl;
+
+
+public class FlightDaoImpl implements FlightDao {
+	
+	private SessionFactory factory;
+	
+	public FlightDaoImpl()
+	{
+		factory=new SessionFactoryManagerImpl().getSessionFactory();
+	}
+
+	@Override
+	public int addFlight(Flight flight) {
+		int flightNumber=0;
+		Session session=factory.openSession();
+		Transaction transaction=session.beginTransaction();
+		
+		
+		session.save(flight);
+		
+		transaction.commit();
+		session.close();
+		
+		return flightNumber;
+	}
+
+	@Override
+	public List<Flight> displayFlights(Flight searching_flight) {
+		
+		Session session=factory.openSession();
+		/*Query q=session.createQuery("select * from flight_1 where source_airport = "+searching_flight.getSource_airport()+
+				" and dest_airport = "+searching_flight.getDest_airport()+
+				" and datetime_flight = "+searching_flight.getDto_flight());*/
+		
+		/*Query q=session.createQuery("select flightNumber from Flight where source_airport = " + "Kochi" +
+		" and dest_airport = " + "Agra" +
+		" and dto_flight = " + "2022/08/20");*/
+		Query q=session.createQuery("select flightNumber from flight_1");
+		//dumy, 2022-08-20 00:00:00, Kochi Airport, Agra Airport, AI, 99999, 999
+
+		//Query q=session.createQuery("select flightNumber from Flight where source_airport = 'Kochi Airport' and dest_airport = 'Agra Airport' and dto_flight = '2022-08-20 00:00:00'");
+		//Query q=session.createQuery("select flightNumber from Flight where source_airport = " +  searching_flight.getSource_airport() + " and dest_airport = " +  searching_flight.getDest_airport() + " and dto_flight = " + searching_flight.getDto_flight());
+		//Query q=session.createQuery("select flightNumber from Flight where source_airport = " +  searching_flight.getSource_airport() + " and dest_airport = " +  searching_flight.getDest_airport());
+		
+		@SuppressWarnings("unchecked")
+		List<Flight> list=q.getResultList();
+		
+		/*for(Flight flight1:list)
+		{
+			System.out.println("Source Airport"+flight1.getSource_airport());
+			System.out.println("Destination Airport"+flight1.getDest_airport());
+			System.out.println("Date of  Airport"+flight1.getDto_flight());
+			System.out.println("Source Airport"+flight1.getFlightNumber());
+			
+		}*/
+		
+		/*System.out.println("Source Airport :"+searching_flight.getSource_airport());
+		System.out.println("Destination Airport :"+searching_flight.getDest_airport());
+		System.out.println("Date of  Travel :"+searching_flight.getDto_flight());
+		System.out.println("No. of Seats :"+searching_flight.getNoofSeats());
+		System.out.println("Ticket Price :"+searching_flight.getTicketPrice());*/
+		
+		return null;
+	}
+
+	
+	
+
+}

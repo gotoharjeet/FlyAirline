@@ -1,0 +1,15 @@
+package com.servlet.service;
+
+
+
+import com.servlet.dto.Departure_Airport;
+import com.servlet.dto.Place_Airport;
+
+
+public interface PlaceService {
+	public int addPlace(Place_Airport place_airport,Departure_Airport departure_airport);
+	public void updatePlace(Place_Airport place_airport,Departure_Airport departure_airport);
+	public void deletePlace(String airportCode,String airportCode1);
+	public Place_Airport searchPlace(String airportCode,String airportCode1);
+	//public List<Place_Airport> getAllPlaces();
+}
